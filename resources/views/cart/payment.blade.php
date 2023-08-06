@@ -11,12 +11,12 @@
                     <div class="card-body">
                         <h3 class="font-weight-light my-4">Untuk Pembayaran bisa dikirim ke :</h3>
                         <hr>
-                        <h5 class="font-weight-light my-4">BRI No. Rekening: 3524889456</h5>
-                        <h5 class="font-weight-light my-4">A.n Arsisyah </h5>     
+                        <h5 class="font-weight-light my-4">BRI No. Rekening: 136801002693539</h5>
+                        <h5 class="font-weight-light my-4">A.n Arsisyahr mahyo Prameswari  </h5>     
                         <hr>                   
                         <h5 class="font-weight-light my-4">lalu upload dengan menekan tombol dibawah ini</h5>
                         <hr>
-                        <h5 class="font-weight-light my-4">konfirmasi hub. 08813581249 </h5>
+                        <h5 class="font-weight-light my-4">konfirmasi hub. 089619395852 </h5>
                         <hr>
                         <h5 class="font-weight-light my-4">No. Nota : {{$nota}} </h5>
 
@@ -27,7 +27,10 @@
                                 <div class="col-md-12">
 
                                     <div class="form-floating mb-3 mb-md-0">                                       
-                                        <input type="file"  class="form-control" name="file" placeholder="Upload Bukti Transfer">      
+                                       <input class="form-control @error('image') is-invalid @enderror" type="file" name="image" id="image" accept=".jpg, .jpeg, .png., .webp">
+                                        @error('image')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                        
                                     </div>
                                 </div>                                 

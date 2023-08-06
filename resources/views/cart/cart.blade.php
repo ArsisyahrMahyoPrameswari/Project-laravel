@@ -24,7 +24,7 @@
                             <td>{{$no++}}</td>
                             <td class="hidden pb-4 md:table-cell">
                                 <a href="#">
-                                    <img src="{{ asset('storage/product/'.$item->attributes->image) }}" alt="Thumbnail" style="width: 50px;">
+                                    <img src="{{ asset('storage/product/'.$item->attributes->image) }}" alt="{{$item->image}}" style="width: 50px;">
                                 </a>
                             </td>
                             <td>

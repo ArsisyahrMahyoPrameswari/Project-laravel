@@ -42,7 +42,7 @@
                                         @if ($trs->image == null)
                                             <a href="{{route('transaction.payment',['nota'=>$trs->nota])}}"><span class="badge bg-primary">No Image</span></a>
                                         @else
-                                           <a href="{{asset('uploads/payment')}}/{{$trs->image}}" class="btn btn-primary pl-6 pr-6" download>Download File</a>
+                                           <a href="{{asset('storage/payment')}}/{{$trs->image}}" class="btn btn-primary pl-6 pr-6" download>Download File</a>
                                         @endif
                                        
                                     </td>

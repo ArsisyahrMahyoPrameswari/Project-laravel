@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>ARHZ STORE</title>
+    <title>PET SHOP</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <!-- Bootstrap icons-->
@@ -21,7 +21,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container px-4 px-lg-5">
-    <h4 class="logo-brand"><span class="text-light">ARHZ</span><span class="text-warning">STORE</span></h4>
+    <h4 class="logo-brand"><span class="text-light">PET</span><span class="text-warning">SHOP</span></h4>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -243,7 +243,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 px-4">
-                    <h2 class="logo-brand"><span class="text-light">ARHZ</span><span class="text-warning">STORE</span></h2>
+                    <h2 class="logo-brand"><span class="text-light">PET</span><span class="text-warning">SHOP</span></h2>
                     <p class="text-light">merupakan toko yang menjual beraneka ragam tanaman, mulai dari tanaman hias hingga tanaman obat keluarga.</p>
                 </div>
                 <div class="col-6 px-4">
@@ -258,7 +258,7 @@
                 </div>
             </div>
             <hr>
-            <p class="text-center text-light"> CopyRight © 2023 by Rayhan Saneval Arhinza | FSWD 2</p>
+            <p class="text-center text-light"> CopyRight © 2023 by Arsisyahr Mahyo Prameswari  | Pet Shop</p>
         </div>
     </footer>
     <!-- Bootstrap core JS-->

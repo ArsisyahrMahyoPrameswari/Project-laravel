@@ -8,12 +8,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class TransactionController extends Controller
 {
     public function index(){
-
-        $trans = Trans::all();
+        $user_id = auth()->user()->id;
+        /*if((auth()->user()->role->name == 'Admin')){
+            $trans = Trans::all();
+        }else{
+            $trans = Trans::where('user_id',$user_id)->get();            
+        }*/
+        
+        $trans = (auth()->user()->role->name == 'Admin')? $trans = Trans::all() : Trans::where('user_id',$user_id)->get();
 
         return view('cart.list_transaction', compact('trans'));
     }
@@ -79,29 +86,49 @@ class TransactionController extends Controller
     }
 
     public function confirm_payment(Request $request){
+
         $user_id = auth()->user()->id;        
         $rqnota = $request->nota ? $request->nota:'';     
         $trans = Trans::where('nota',$rqnota)->first();
 
         $status = ($request->status)? $request->status : $trans->status;       
-        $fileName = ($trans->image !=null)? $trans->image:null;
-        
+        $imageName = ($trans->image !=null)? $trans->image:null;    
        
         if($rqnota){          
 
-            if ($request->hasFile('file')) {
-                $file = $request->file('file');
-                $destinationPath = public_path('uploads/payment');
-                $fileName = uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move($destinationPath, $fileName);    }
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $destinationPath = public_path('storage/payment');
+                $imageName = uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->move($destinationPath, $imageName);  
+
+            }
+            /*if ($request->hasFile('image')) {
+                $imageName = time() . '.' . $request->image->extension();
+                $request->image->storeAs('public/payment', $imageName);
                 
-            Trans::updateOrCreate(
+                $old_image = Trans::find($trans->id)->image;
+                Storage::delete('public/payment/' . $old_image);
+            }*/
+                
+            if((auth()->user()->role->name == 'Admin')){
+                Trans::updateOrCreate(
+                    ['nota' =>$rqnota],
+                    [                        
+                        'tglPembayaran' => Carbon::now(),                   
+                        'status' => $status,
+                        'image' => $imageName
+                    ]);  
+            }else{
+               Trans::updateOrCreate(
                 ['nota' =>$rqnota,'user_id'=>$user_id,],
                 [                        
                     'tglPembayaran' => Carbon::now(),                   
                     'status' => $status,
-                    'image' => $fileName
-                ]);       
+                    'image' => $imageName
+                ]);         
+            }
+                 
         }
 
            

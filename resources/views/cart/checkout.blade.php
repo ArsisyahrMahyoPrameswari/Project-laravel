@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <h3 class="font-weight-light my-4">Silahkan dilengkapi lokasi pengiriman barang :</h3>
                         <hr>                       
-                        <h5 class="font-weight-light my-4">atau hub. 08813581249 </h5>
+                        <h5 class="font-weight-light my-4">atau hub. 089619395852 </h5>
                         <hr>
                         <h5 class="font-weight-light my-4">No. Nota : {{$nota}} </h5>
 

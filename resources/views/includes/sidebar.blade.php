@@ -51,13 +51,12 @@
                 <a class="nav-link" href="{{ route('product.index') }}">
                     <div class="sb-nav-link-icon"><i class="bi bi-bag"></i></div>
                     Product
-                </a>
-                <a class="nav-link" href="{{ route('transaction.index') }}">
+                </a>    
+            @endif
+             <a class="nav-link" href="{{ route('transaction.index') }}">
                     <div class="sb-nav-link-icon"><i class="bi bi-cart"></i></div>
                     Transaction
                 </a>
-                 
-            @endif
             
         </div>
     </div>
